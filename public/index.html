@@ -14,7 +14,9 @@
 
     <title>30 Days Of React App</title>
     <style>
+    
       /* == General style === */
+      
       * {
         box-sizing: border-box;
         padding: 0;
@@ -25,7 +27,7 @@
       body {
         height: 100%;
         line-height: 1.5;
-        font-family: "Montserrat";
+        font-family: 'Montserrat';
         font-weight: 300;
         color: black;
       }
@@ -37,59 +39,37 @@
 
       .header-wrapper,
       .main-wrapper,
-      .footer-wrapper,
-      .form-wrapper {
+      .footer-wrapper {
         width: 85%;
-        margin: 0 auto;
-        text-align: center;
+        margin: auto;
       }
 
       .header-wrapper,
       .main-wrapper {
-        padding: 20px;
-        margin: 0px auto;
+        padding: 10px;
+        margin: 2px auto;
       }
 
-      /* h1 {
+      h1 {
         font-size: 70px;
         font-weight: 300;
-      } */
-
-      h1 {
-        font-size: 20px;
-        font-weight: 500;
-        padding-bottom: 20px;
       }
 
       h2,
       h3 {
-        font-weight: bold;
-        text-align: center;
+        font-weight: 300;
       }
 
-      button,
-      input {
-        border-radius: 5px;
-        border: none;
-      }
-
-      input {
-        margin: 0 5px 20px;
-        padding: 5px;
-        width: 100px;
-      }
-
-      button {
-        display: block;
-        margin: 0 auto;
-        background-color: rgb(223, 126, 126);
-        color: white;
-        padding: 5px 80px;
+      header {
+        background-color: #61dbfb;
+        padding: 25;
+        padding: 10px;
       }
 
       main {
         padding: 10px;
-        background-color: rgb(243, 243, 243);
+        padding-bottom: 60px;
+        /* Height of the footer */
       }
 
       ul {
@@ -98,15 +78,6 @@
 
       ul li {
         list-style: none;
-      }
-
-      img {
-        height: 200px;
-        padding: 0 20px;
-      }
-
-      p {
-        font-weight: 400;
       }
 
       footer {
@@ -123,23 +94,16 @@
         text-align: center;
         line-height: 60px;
       }
-
-      .img-wrapper {
-        height: 200px;
-        text-align: center;
+      .user-card {
+        margin-top: 10px;
       }
-
-      .header-wrapper {
-        border-radius: 10px 10px 0 0;
-        background-color: rgb(169, 226, 255);
+      .user-card > img {
+        border-radius: 50%;
+        width: 14%;
       }
-      .form-wrapper {
-        height: 100px;
-        text-align: center;
-        border-radius: 0 0 10px 10px;
-        background-color: rgb(169, 226, 255);
-      }
+      
     </style>
+    
   </head>
   <body>
     <div id="root"></div>

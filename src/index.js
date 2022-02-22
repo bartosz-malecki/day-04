@@ -1,54 +1,107 @@
 // index.js
 import React from "react";
 import ReactDOM from "react-dom";
-import htmlImage from "./images/html_logo.png";
-import cssImage from "./images/css_logo.png";
-import jsImage from "./images/js_logo.png";
-import reactImage from "./images/react_logo.png";
+import asabenehImage from "./images/asabeneh.jpg";
 
-//ex2.1
+// JSX element, header
+const welcome = "Welcome to 30 Days Of React Challenge";
+const title = "Getting Started React";
+const subtitle = "JavaScript Library";
+const author = {
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+};
+const date = "Oct 2, 2020";
 
-// const main = "Front End Technologies";
-// const imagesAr = [htmlImage, cssImage, jsImage, reactImage];
-
-// const header = (
-//   <header>
-//     <div className="header-wrapper">
-//       <h2>{main}</h2>
-//     </div>
-//     <div className="img-wrapper">
-//       {imagesAr.map((img, index) => (
-//         <img src={img} key={index} alt={`${img}`} />
-//       ))}
-//     </div>
-//   </header>
-// );
-// // JSX element, app
-// const app = <div className="app">{header}</div>;
-
-// ex2.2
-
-const title = "SUBSCRIBE";
-const info = "Sign up with your email address to receive news and updates";
-
-const main = (
-  <main>
+// JSX element, header
+const Header = () => (
+  <header>
     <div className="header-wrapper">
-      <h1>{title}</h1>
-      <p>{info}</p>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
     </div>
-    <div className="form-wrapper">
-      <input placeholder="First name"></input>
-      <input placeholder="Last name"></input>
-      <input placeholder="Email"></input>
-      <button>Subscribe</button>
+  </header>
+);
+
+const numOne = 3;
+const numTwo = 2;
+
+const result = (
+  <p>
+    {numOne} + {numTwo} = {numOne + numTwo}
+  </p>
+);
+
+const yearBorn = 1820;
+const currentYear = 2020;
+const age = currentYear - yearBorn;
+const personAge = (
+  <p>
+    {" "}
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+);
+
+// User Card Component
+const UserCard = () => (
+  <div className="user-card">
+    <img src={asabenehImage} alt="asabeneh image" />
+    <h2>
+      {author.firstName} {author.lastName}
+    </h2>
+  </div>
+);
+
+// JSX element, main
+const techs = ["HTML", "CSS", "JavaScript"];
+const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+
+// JSX element, main
+const Main = () => (
+  <main>
+    <div className="main-wrapper">
+      <div>
+        <p>
+          Prerequisite to get started{" "}
+          <strong>
+            <em>react.js</em>
+          </strong>
+          :
+        </p>
+        <ul>{techsFormatted}</ul>
+        {result}
+        {personAge}
+      </div>
+      <UserCard />
     </div>
   </main>
 );
 
+const copyRight = "2020";
+
+// JSX element, footer
+const Footer = () => (
+  <footer>
+    <div className="footer-wrapper">
+      <p>Copyright &copy;{copyRight}</p>
+    </div>
+  </footer>
+);
+
 // JSX element, app
-const app = <div className="app">{main}</div>;
+const App = () => (
+  <div className="app">
+    <Header />
+    <Main />
+    <Footer />
+  </div>
+);
 
 const rootElement = document.getElementById("root");
-// we render the JSX element using the ReactDOM package
-ReactDOM.render(app, rootElement);
+// we render the App component using the ReactDOM package
+ReactDOM.render(<App />, rootElement);
