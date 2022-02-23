@@ -28,24 +28,30 @@ const Header = () => (
   </header>
 );
 
-const numOne = 3;
-const numTwo = 2;
+const Resoult = () => {
+  const numOne = 3;
+  const numTwo = 2;
 
-const result = (
-  <p>
-    {numOne} + {numTwo} = {numOne + numTwo}
-  </p>
-);
+  const result = (
+    <p>
+      {numOne} + {numTwo} = {numOne + numTwo}
+    </p>
+  );
+  return result;
+};
 
-const yearBorn = 1820;
-const currentYear = 2020;
-const age = currentYear - yearBorn;
-const personAge = (
-  <p>
-    {" "}
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-);
+const Age = () => {
+  const yearBorn = 1820;
+  const currentYear = 2020;
+  const age = currentYear - yearBorn;
+  const personAge = (
+    <p>
+      {" "}
+      {author.firstName} {author.lastName} is {age} years old
+    </p>
+  );
+  return personAge;
+};
 
 // User Card Component
 const UserCard = () => (
@@ -58,8 +64,11 @@ const UserCard = () => (
 );
 
 // JSX element, main
-const techs = ["HTML", "CSS", "JavaScript"];
-const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+const Techs = () => {
+  const techs = ["HTML", "CSS", "JavaScript"];
+  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+  return techsFormatted;
+};
 
 // JSX element, main
 const Main = () => (
@@ -73,9 +82,11 @@ const Main = () => (
           </strong>
           :
         </p>
-        <ul>{techsFormatted}</ul>
-        {result}
-        {personAge}
+        <ul>
+          <Techs />
+        </ul>
+        <Resoult />
+        <Age />
       </div>
       <UserCard />
     </div>
